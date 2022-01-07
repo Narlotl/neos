@@ -23,7 +23,7 @@ class Asteroid {
         fill(this.color);
         if (mouseX + (this.width * this.widthMod * 2) > this.pos.x && mouseX - (this.width * this.widthMod * 2) < this.pos.x + this.width && mouseY - (this.width * 2) < this.pos.y && mouseY + (this.width * 2) > this.pos.y - this.width) {
             document.querySelector('div.info').innerHTML = this.name + '<p>Average distance from '.concat(this.orbitingBody).concat(': ').concat(this.distance.toLocaleString()).concat('km</p><p>Average speed: ').concat((this.speed).toLocaleString()).concat('km/hr</p><p>Estitmated size: ').concat((this.width * this.distance / 300000000).toLocaleString()).concat('km</p><p>Is potentially dangerous: ').concat(this.hazardous).concat('</p><p><a href="').concat(this.url).concat('" target="_blank">More information</a></p>');
-            fill(128, 0, 128);
+            fill(76, 0, 76);
         }
         translate(this.pos.x, this.pos.y);
         ellipseMode(CORNER);
