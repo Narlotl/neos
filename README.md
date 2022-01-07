@@ -1,2 +1,2 @@
 # Asteroids
-Using NASA's [NeoWs](https://api.nasa.gov/#browseAPI) (Near Earth Object Web Service) API to show orbits of Earth-orbiting objects.
+Using NASA's [NeoWs (Near Earth Object Web Service)](https://api.nasa.gov/#browseAPI) API to show orbits of Earth-orbiting objects.
