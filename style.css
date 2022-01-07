@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+body {
+    color: white;
+    background: black;
+    font-family: 'Roboto Mono', monospace;
+}
+
+canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+a {
+    color: purple;
+}
+
+input[type="range"] {
+    -webkit-appearance: none !important;
+    height: 2px;
+    margin-bottom: 20px;
+    opacity: .75;
+    transition: .25s ease-in-out opacity;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: purple;
+    border-radius: 33%;
+    cursor: pointer;
+}

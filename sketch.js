@@ -3,10 +3,27 @@ const AU_TO_KM = 149597871;
 
 function setup() {
     createCanvas(document.querySelector('div.info').clientWidth - 17, document.documentElement.clientHeight);
+    run(5);
+}
+
+function draw() {
+    background(0, 35);
+    asteroids.forEach(asteroid => {
+        asteroid.show();
+    });
+}
+
+function run(groups) {
+    clear();
+    asteroids = [];
+    var used = [];
     var req;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < groups; i++) {
+        let randomNumber;
+        while (used.includes(randomNumber = round(random(0, 50)))) { }
+        used.push(randomNumber);
         req = new XMLHttpRequest();
-        req.open('GET', 'https://api.nasa.gov/neo/rest/v1/neo/browse?page=' + round(random(0, 50)) + '&api_key=fvA9u4qpBK9EY8vGLkPI55IDAh2qO0ImrORbmr0L', true);
+        req.open('GET', 'https://api.nasa.gov/neo/rest/v1/neo/browse?page=' + randomNumber + '&api_key=fvA9u4qpBK9EY8vGLkPI55IDAh2qO0ImrORbmr0L', true);
         req.onload = function () {
             let objects = JSON.parse(this.response).near_earth_objects;
             objects.forEach(asteroid => {
@@ -23,13 +40,6 @@ function setup() {
         };
         req.send();
     }
-}
-
-function draw() {
-    background(0, 35);
-    asteroids.forEach(asteroid => {
-        asteroid.show();
-    });
 }
 
 //fvA9u4qpBK9EY8vGLkPI55IDAh2qO0ImrORbmr0L
