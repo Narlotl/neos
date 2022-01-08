@@ -20,7 +20,7 @@ function run(groups) {
     var req;
     for (let i = 0; i < groups; i++) {
         let randomNumber;
-        while (used.includes(randomNumber = round(random(0, 50)))) { }
+        while (used.includes(randomNumber = round(random(0, 20)))) { }
         used.push(randomNumber);
         req = new XMLHttpRequest();
         req.open('GET', 'https://api.nasa.gov/neo/rest/v1/neo/browse?page=' + randomNumber + '&api_key=fvA9u4qpBK9EY8vGLkPI55IDAh2qO0ImrORbmr0L', true);
