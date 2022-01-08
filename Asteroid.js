@@ -1,7 +1,7 @@
 class Asteroid {
     constructor(distance, width, inclination, speed, name, orbit, hazardous, url) {
         this.distance = distance;
-        this.width = width / distance * 4000000000;
+        this.width = width / distance * 2000000000;
         this.inclination = inclination;
         this.speed = speed;
         this.name = name;
